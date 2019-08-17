@@ -1,0 +1,69 @@
+angular 8
+Api => Node , SpringBot ,Python, .net
+forms 
+Testing
+---------------
+Nginx
+Docker
+--------------
+GitHub
+
+---------------------------
+HTML
+CSS
+JAVSCRIPT
+BooTstrap
+
+
+JAVASCRIPT OBJECT NOTATION
+[
+    {
+        "name":"John",
+        "class":"UI"
+    },
+    {
+        name:"Alis",
+        class:"AI",
+        rollno:1
+    }
+]
+
+package.
+
+/*********************
+    Step to create package.json
+************************/
+> goto the folder using cmd/terminal
+  > npm init
+    > Answer all question
+        > yes
+
+
+
+Local package=> local to the folder
+Global package=> local to the system
+setup and run 
+
+/*********************
+    Step to install local package
+************************/
+> goto the folder using cmd/terminal
+    > npm install zone.js / npm i zone.js/ npm install zone.js --save
+
+/*********************
+    Step to setup Angular
+************************/
+for mac/linux
+>open terminal
+ >sudo npm i -g @angular/cli
+
+For window
+> Run your cmd as admin
+ >npm i -g @angular/cli
+
+>goto the folder using cmd/terminal
+    > ng new firstapp
+       > type 'Y'
+        > cd firstapp
+            > npm start / ng serve
+                 > goto browser type http://localhost:4200
