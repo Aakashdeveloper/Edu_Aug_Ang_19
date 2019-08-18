@@ -67,3 +67,94 @@ For window
         > cd firstapp
             > npm start / ng serve
                  > goto browser type http://localhost:4200
+
+/*********************
+  Command to start
+************************/
+> npm start
+> ng serve 
+> ng serve --port 6700
+
+/*********************
+  Flow of app
+************************/
+=> npm start => angular.json => main.ts => Main Module => Main Component
+=> index.html
+
+
+
+/*****************************
+ Different file in angular app
+********************************/
+> Module =>  Information of all the file
+> Component  => contains all html, css, logic
+
+** One main module && one main Component 
+
+> Pipe/Filter => run time data change/ run time logic
+> Service=>  Dependency Injection/ Call External API
+> Routing=>   For route the pages
+
+
+Module    => NgModule
+Component => Component
+Pipe      => Pipe, PipeTransform
+Service   => Injectable
+
+/*****************************
+ Component Flow (first)
+********************************/
+=> Create a Component
+    =>Declare component using class name in appmodule
+        in declaration as well as bootstrap array
+     =>Put Selector name in index.html
+
+/*****************************
+ Component Flow (second)
+********************************/
+=> Create a Component
+    =>Declare component using class name in appmodule
+      in just declaration array
+     =>Put Selector name in main component
+
+
+
+     ```````
+     ~~~~~~~~~
+
+    
+/****************************
+    Bootstrap Tags
+*****************************/
+Grid
+Table
+Alert
+Button
+Panel
+Glyphicon
+Navbar
+Forms
+Input
+
+https://www.w3schools.com/bootstrap/bootstrap_buttons.asp
+
+
+String
+Number
+boolean
+Any
+
+/****************************
+    Binding in HTML
+*****************************/
+One Way Binding
+> Data Binding       {{}}
+> Property Binding    []
+> Event Binding       ()
+Two Way Binding    
+
+/****************************
+Structral Directive
+*****************************/
+*ngFor = like for loop
+*ngIf  = Like if else
