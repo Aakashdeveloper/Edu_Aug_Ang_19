@@ -176,5 +176,16 @@ www.abc.com/1/ds/dg
 www.abc.com?name="abc"
 
 
+ng-untouched   ng-pristine  ng-valid
+ng-touched     ng-dirty     ng-invalid
+
+touched = as soon as user visited untouched => touched
+pristine/dirty = when ever any value change
+valid => if validation not full fill => invalid
+
+
+
+
+
 
 Fawzi: How to implement 3-level master-details using (*ngFor). Where the first *ngFor loop through all records, and for each record in the first *ngFor the 2nd *ngFor display set of records based on a key (implicitly without  a click event), and for each record the 3rd *ngFor display a set of record based on a composite key (implicitly without  a click event).

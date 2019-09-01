@@ -1,46 +1,46 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { IProduct } from './product.model';
+import { ProductService } from './product.service';
 
 @Component({
     selector: 'app-prod',
-    templateUrl: './product.component.html'
+    templateUrl: './product.component.html',
+    styleUrls: ['./product.component.css'],
+    styles: [
+        `.online{
+            background-color:gray
+        }`
+    ]
 })
 
-export class ProductComponent  {
+export class ProductComponent implements OnInit  {
     title: string  = 'Products List';
+    showTable: boolean = true;
+    showImage: boolean = false;
+    userText: string;
+    imageWidth: number = 100;
+    serverStatus: String = 'Offline';
 
-    products: any[] = [
-        {
-            _id: '5a05dacc734d1d68d42d31f3',
-            productId: 1,
-            productName: 'Leaf Rake',
-            productCode: 'GDN-0011',
-            releaseDate: 'March 19, 2016',
-            description: 'Leaf rake with 48-inch wooden handle.',
-            price: 19.95,
-            starRating: 3.5,
-            imageUrl: 'http://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png'
-        },
-        {
-            _id: '5a05daec734d1d68d42d32ca',
-            productId: 2,
-            productName: 'Garden Cart',
-            productCode: 'GDN-0023',
-            releaseDate: 'March 18, 2016',
-            description: '15 gallon capacity rolling garden cart',
-            price: 32.99,
-            starRating: 4.2,
-            imageUrl: 'http://openclipart.org/image/300px/svg_to_png/58471/garden_cart.png'
-        },
-        {
-            _id: '5a05db08734d1d68d42d3300',
-            productId: 3,
-            productName: 'Hammer',
-            productCode: 'TBX-0048',
-            releaseDate: 'May 21, 2016',
-            description: 'Curved claw steel hammer',
-            price: 8.9,
-            starRating: 4.8,
-            imageUrl: 'https://i.ibb.co/TrR7jkM/hammer.png'
-        }
-    ];
+    constructor(private productservice: ProductService ) {
+        this.serverStatus = Math.random() > 0.5 ? 'Online' : 'Offline';
+    }
+
+    products: IProduct[];
+
+    ngOnInit(): void {
+       this.productservice.getProduct()
+        .subscribe((data) => this.products = data);
+    }
+
+    getColor(){
+        return this.serverStatus === 'Online' ? 'green': 'red'
+    }
+
+    toggleImage(): void{
+        this.showImage = !this.showImage;
+    }
+
+    dataRecive(message:string): void{
+        this.title = "Products List >>> "+message
+    }
 }

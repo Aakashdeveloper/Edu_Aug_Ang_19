@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "firstapp": {
+    "formsapp": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/firstapp",
+            "outputPath": "dist/formsapp",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -58,18 +58,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "firstapp:build"
+            "browserTarget": "formsapp:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "firstapp:build:production"
+              "browserTarget": "formsapp:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "firstapp:build"
+            "browserTarget": "formsapp:build"
           }
         },
         "test": {
@@ -106,15 +106,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "firstapp:serve"
+            "devServerTarget": "formsapp:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "firstapp:serve:production"
+              "devServerTarget": "formsapp:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "firstapp"
+  "defaultProject": "formsapp"
 }
