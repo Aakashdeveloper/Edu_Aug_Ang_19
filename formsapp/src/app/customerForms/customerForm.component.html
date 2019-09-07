@@ -4,7 +4,7 @@
         Customer Form
     </div>
     <div class="panel-body">
-        <form>
+        <form #form="ngForm" (submit)="submitForm(form)">
             <div class="form-group" [class.has-error]="firstname.invalid">
                 <label for="fname"
                 class="control-label">FirstName</label>
@@ -87,16 +87,22 @@
                         value="female"/>Female
                 </label>
             </div>
-            <div class="form-group">
-                <label for="delivery">Days</label>
+            <div class="form-group" [class.has-error]="hasDayError">
+                <label for="delivery" 
+                    class="control-label">Days</label>
                 <select class="form-control"
                 name="maxday"
+                (blur)="validateDays($event)"
                 [(ngModel)] = "mycust.maxday">
+                    <option value="default">Please Select the Day</option>
                     <option *ngFor="let day of maxdays">
                         {{day}}
                     </option>
                     
                 </select>
+                <div class="alert alert-danger" *ngIf="hasDayError">
+                   Please select valid Days
+                </div>
             </div>
 
             <button type="submit"
