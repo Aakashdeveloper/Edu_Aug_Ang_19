@@ -1,0 +1,63 @@
+<br/>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        Register Form
+    </div>
+    <div class="panel-body">
+        <form #form="ngForm" (submit)="submitForm(form)">
+            <div class="form-group">
+                <label for="fname"
+                class="control-label">FirstName</label>
+                <input type="text"
+                class="form-control"
+                required
+                value="john"
+                name="name"
+                [ngModel] = "user.name"
+                (ngModelChange)="firstToUpper($event)"
+                #firstname="ngModel"
+                id="fname"/>
+               
+            </div>
+
+            <div class="form-group" [class.has-error]="email.invalid && email.touched">
+                    <label for="mail">Email</label>
+                    <input type="text"
+                    class="form-control"
+                    placeholder="a@a"
+                    name="email"
+                    pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+                    [(ngModel)] = "user.email"
+                    #email="ngModel"
+                    id="mail"/>
+                    <div class="alert alert-danger" *ngIf="email.invalid && email.touched">
+                      Enter valid email
+                    </div>
+            </div>
+            <div class="form-group" [class.has-error]="passw.invalid && passw.touched">
+                    <label for="pwd"
+                    class="control-label">Password</label>
+                    <input type="password"
+                    class="form-control"
+                    name="password"
+                    [(ngModel)] = "user.password"
+                    minlength="5"
+                    #passw="ngModel"
+                    id="pwd"/>
+                    <div class="alert alert-danger" *ngIf="passw.invalid && passw.touched">
+                        Min length is 5
+                    </div>
+            </div>
+        
+            <button type="submit"
+                class="btn btn-success">
+                Submit
+            </button>&nbsp;
+            <button type="reset"
+                class="btn btn-danger">
+                Reset
+            </button>
+
+        </form>
+    </div>
+</div>
